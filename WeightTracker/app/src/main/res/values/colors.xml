@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2563EB</color>        <!-- bright blue -->
+    <color name="colorPrimaryDark">#1E40AF</color>    <!-- deep navy blue -->
+    <color name="colorAccent">#06B6D4</color>         <!-- teal accent -->
+
+    <color name="backgroundLight">#F8FAFC</color>     <!-- off-white background -->
+    <color name="textPrimary">#0F172A</color>         <!-- dark navy text -->
+    <color name="textSecondary">#334155</color>       <!-- cool gray text -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- add these for reference in XML layouts -->
+    <color name="primary">@color/colorPrimary</color>
+    <color name="primaryDark">@color/colorPrimaryDark</color>
+    <color name="accent">@color/colorAccent</color>
+</resources>

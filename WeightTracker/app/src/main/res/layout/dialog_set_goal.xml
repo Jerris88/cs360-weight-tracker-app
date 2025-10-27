@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Set Goal dialog.
+  Lets the user enter their target weight and save it to update the tracker screen.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@color/backgroundLight"
+    android:maxWidth="488dp">
+
+    <!-- Shared header (title + close button) -->
+    <include
+        android:id="@+id/includeHeader"
+        layout="@layout/dialog_header" />
+
+    <!-- Small space under the header -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Dialog title text -->
+    <TextView
+        android:id="@+id/tvGoalDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/goal_dialog_title"
+        android:textColor="@color/textPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="14dp" />
+
+    <!-- Input field where user types their goal weight -->
+    <EditText
+        android:id="@+id/etGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:minHeight="56dp"
+        android:padding="12dp"
+        android:hint="@string/hint_goal_input"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:importantForAutofill="no"
+        android:ems="18"
+        android:maxWidth="440dp" />
+
+    <!-- Button that saves and applies the new goal -->
+    <Button
+        android:id="@+id/btnSetGoalDialog"
+        style="@style/AppButton.Primary"
+        android:layout_width="218dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:text="@string/btn_set_weight" />
+
+</LinearLayout>

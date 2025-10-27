@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shared dialog header layout.
+  Used at the top of all dialog windows for title text and a close button.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@color/backgroundLight">
+
+    <!-- Dialog title -->
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_default_title"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/textPrimary"
+        android:layout_toStartOf="@id/btnCloseDialog"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Close button with full 48dp tap target -->
+    <ImageButton
+        android:id="@+id/btnCloseDialog"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close_24"
+        app:tint="@color/textSecondary"
+        android:contentDescription="@string/close_dialog"
+        android:padding="12dp" />
+</RelativeLayout>

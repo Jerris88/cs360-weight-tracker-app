@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">Weight Tracker</string>
+    <string name="app_title">Weight Tracker</string>
+    <string name="app_subtitle">Track your daily weight to hit your goal</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password_register">Confirm Password (register)</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="tip_create_account_instruction">
+    Tip: Use Create Account to register a new user. Passwords are case-sensitive.
+    </string>
+    <string name="error_invalid_login">Invalid username or password</string>
+    <string name="tracker_title">Your Weights</string>
+    <string name="headers_weight_date_actions">Weight (lb)   •   Date   •   Actions</string>
+    <string name="add_entry">Add Entry</string>
+    <string name="delete">Delete</string>
+    <string name="sample_weight">178.2 lb</string>
+    <string name="sample_date">2025-01-05</string>
+    <string name="sample_weight_2">176.9 lb</string>
+    <string name="sample_date_2">2025-01-06</string>
+    <string name="delete_row_1">Delete row 1</string>
+    <string name="delete_row_2">Delete row 2</string>
+    <string name="header_weight">Weight (lb)</string>
+    <string name="header_date">Date</string>
+    <string name="header_actions">Actions</string>
+    <string name="add_new_entry">Add New Entry</string>
+    <string name="goal_status_example">Goal: 165 lb • Current: 176.9 lb • 11.9 lb to go</string>
+    <string name="hint_weight_lbs">Enter weight (lb)</string>
+    <string name="hint_date_yyyy_mm_dd">Enter date (YYYY-MM-DD)</string>
+    <string name="sms_title">SMS Notifications</string>
+    <string name="sms_banner_goal">Just a quick reminder: You\'ll get a text when you hit your goal weight.</string>
+
+    <string name="sms_permission_header">SMS Permission</string>
+    <string name="sms_permission_not_granted">Not enabled yet — tap below to allow SMS.</string>
+    <string name="sms_permission_granted">All set! SMS alerts are enabled.</string>
+    <string name="sms_request_permission">Allow SMS Notifications</string>
+
+    <string name="sms_notification_preview_header">Sample Text Message</string>
+    <string name="sms_preview_text">You did it! Goal weight reached in Weight Tracker. Keep it going 🎯</string>
+
+    <string name="sms_phone_hint">Phone number for a quick test</string>
+    <string name="sms_send_test">Send Sample Text</string>
+
+    <string name="sms_tip_denied_behaviour">If you choose not to allow SMS, the app still works — you just won’t get text alerts.</string>
+    <string name="set_goal">Set Goal</string>
+
+    <string name="enter_weight_date">Please enter weight and date.</string>
+    <string name="enter_valid_weight">Please enter a valid number for weight.</string>
+    <string name="enter_valid_number">Please enter a valid number.</string>
+    <string name="delete_entry_q">Delete this entry?</string>
+    <string name="edit_entry">Edit Entry</string>
+    <string name="save">Save</string>
+    <string name="set_goal_weight_title">Set Goal Weight</string>
+    <string name="hint_goal_input">Enter new goal (lb)</string>
+
+    <string name="goal_not_set">Goal: not set</string>
+    <string name="goal_line">Goal: %1$.1f lb</string>
+    <string name="current_dash">Current: —</string>
+    <string name="current_line">Current: %1$.1f lb</string>
+    <string name="to_go_suffix"> • %1$.1f lb to go</string>
+    <string name="past_goal_suffix"> • %1$.1f lb past goal</string>
+    <string name="goal_updated_to">Goal updated to %1$.1f lb</string>
+
+    <string name="label_date">Enter date</string>
+    <string name="label_weight">Enter weight</string>
+
+    <string name="goal_dialog_title">Enter new goal weight</string>
+    <string name="btn_set_weight">Set Weight</string>
+
+    <string name="logout">Logout</string>
+    <string name="logout_description">Logs out and returns to login screen</string>
+
+    <string name="cd_forgot_username_link">Forgot username link</string>
+    <string name="cd_forgot_password_link">Forgot password link</string>
+
+    <string name="forgot_username">Forgot username?</string>
+    <string name="forgot_password">Forgot password?</string>
+
+    <string name="hint_username">Username</string>
+    <string name="tap_load_question">(Tap Load question)</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_confirm_new_password">Confirm new password</string>
+
+    <string-array name="security_questions">
+        <item>What is your favorite color?</item>
+        <item>What city were you born in?</item>
+        <item>What is your favorite teacher\'s last name?</item>
+        <item>What was the name of your first pet?</item>
+    </string-array>
+
+    <string name="choose_sec_question">Choose a security question</string>
+    <string name="hint_security_answer">Enter your answer</string>
+
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="register">register</string>
+
+    <string name="continue_btn">Continue</string>
+    <string name="verify_btn">Verify</string>
+    <string name="reset_password">Reset password</string>
+    <string name="error_fill_all_fields">Please complete all fields.</string>
+
+    <string name="find_username">Find username</string>
+    <string name="username_result_placeholder">Your username will appear here</string>
+    <string name="username_is_label">Your username: %1$s</string>
+
+    <string name="find_username_title">Find your username</string>
+    <string name="close">Close</string>
+
+
+    <string name="error_valid_email">Enter a valid email</string>
+    <string name="error_email_not_found">No account found for that email</string>
+
+    <string name="error_no_security_question">Security question not set</string>
+    <string name="start_with_email">Start with your email first</string>
+    <string name="error_bad_security_answer">Incorrect security answer</string>
+    <string name="error_password_mismatch_len">Passwords must match and be 6+ chars</string>
+    <string name="password_updated">Password updated</string>
+    <string name="update_failed">Update failed</string>
+
+    <string name="dialog_default_title">Dialog</string>
+    <string name="close_dialog">Close</string>
+
+    <string name="set_goal_title">Set Goal</string>
+    <string name="forgot_password_title">Reset Password</string>
+    <string name="btn_done">done button</string>
+
+</resources>

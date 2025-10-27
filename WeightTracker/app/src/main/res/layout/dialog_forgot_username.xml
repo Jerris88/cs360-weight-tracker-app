@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Forgot Username dialog layout.
+  This one is simple — user enters their email, taps a button, and sees their username if it’s found.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:maxWidth="@dimen/dialog_container_max_width">
+
+        <!-- Shared dialog header (title and small icon) -->
+        <include
+            android:id="@+id/includeHeader"
+            layout="@layout/dialog_header" />
+
+        <!-- Small space under the header -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@android:color/transparent" />
+
+        <!-- Email input field -->
+        <EditText
+            android:id="@+id/etEmailLookup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="@dimen/dialog_field_max_width"
+            android:ems="20"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecondary" />
+
+        <!-- Button to look up the username based on the email -->
+        <Button
+            android:id="@+id/btnLookupUsername"
+            style="@style/AppButton.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="@string/find_username" />
+
+        <!-- Error message area (hidden until needed) -->
+        <TextView
+            android:id="@+id/tvFuError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            android:text="@string/error_fill_all_fields" />
+
+        <!-- Displays the found username once the search succeeds -->
+        <TextView
+            android:id="@+id/tvUsernameResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="@dimen/dialog_field_max_width"
+            android:paddingTop="12dp"
+            android:textColor="@color/textPrimary"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:text="@string/username_result_placeholder" />
+
+    </LinearLayout>
+</ScrollView>

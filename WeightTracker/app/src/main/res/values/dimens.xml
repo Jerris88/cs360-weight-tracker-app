@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dialog_field_max_width">440dp</dimen>      <!-- under 488dp -->
+    <dimen name="dialog_container_max_width">560dp</dimen>  <!-- dialog body -->
+</resources>

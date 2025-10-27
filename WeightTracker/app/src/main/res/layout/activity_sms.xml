@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Layout for the SMS screen.
+  This handles checking for permissions and sending a test message.
+  Everything stays centered and narrow for a clean layout on all screen sizes.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/backgroundLight"
+    tools:context=".SmsActivity">
+
+    <!-- Page title -->
+    <TextView
+        android:id="@+id/tvSmsTitle"
+        style="@style/AppText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/sms_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Banner text shown right under the title -->
+    <TextView
+        android:id="@+id/tvSmsBanner"
+        style="@style/AppText.Banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/sms_banner_goal"
+        app:layout_constraintTop_toBottomOf="@id/tvSmsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Section that handles SMS permission checks -->
+    <LinearLayout
+        android:id="@+id/sectionPermission"
+        style="@style/AppContainer.Section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSmsBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <!-- Header for permission section -->
+        <TextView
+            android:id="@+id/tvPermissionHeader"
+            style="@style/AppText.SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_permission_header"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+        <!-- Shows whether permission is granted or not -->
+        <TextView
+            android:id="@+id/tvPermissionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_permission_not_granted"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="6dp"
+            tools:text="@string/sms_permission_granted" />
+
+        <!-- Button that asks for permission if it isn’t granted yet -->
+        <Button
+            android:id="@+id/btnRequestPermission"
+            style="@style/AppButton.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:maxWidth="320dp"
+            android:text="@string/sms_request_permission"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Divider line to visually separate permission area from preview section -->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E2E8F0"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        app:layout_constraintTop_toBottomOf="@id/sectionPermission"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Section showing what the SMS message will look like -->
+    <LinearLayout
+        android:id="@+id/sectionPreview"
+        style="@style/AppContainer.Section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <!-- Header for preview section -->
+        <TextView
+            android:id="@+id/tvNotifyHeader"
+            style="@style/AppText.SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_notification_preview_header"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+        <!-- Example of what the SMS text will look like -->
+        <TextView
+            android:id="@+id/tvPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_preview_text"
+            android:layout_marginTop="6dp"
+            android:textAlignment="center" />
+
+        <!-- Input for phone number to send the test message -->
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/AppInput.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sms_phone_hint"
+            android:inputType="phone"
+            android:autofillHints="phone"
+            android:importantForAutofill="yes"
+            android:layout_marginTop="10dp" />
+
+        <!-- Button to send a test SMS (enabled only when permission is granted) -->
+        <Button
+            android:id="@+id/btnSendTest"
+            style="@style/AppButton.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:maxWidth="320dp"
+            android:text="@string/sms_send_test"
+            android:enabled="false"
+            tools:enabled="true"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Tip at the bottom explaining what happens if permission is denied -->
+    <TextView
+        android:id="@+id/tvSmsTip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/sms_tip_denied_behaviour"
+        android:textColor="@color/textSecondary"
+        android:alpha="0.9"
+        app:layout_constraintTop_toBottomOf="@id/sectionPreview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Done button to return to login screen -->
+    <Button
+        android:id="@+id/btnDone"
+        style="@style/AppButton.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/btn_done"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSmsTip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

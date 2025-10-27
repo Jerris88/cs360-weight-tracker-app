@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MainActivity layout for the login screen.
+  Everything is centered and evenly spaced to keep it simple and readable.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/backgroundLight"
+    tools:context=".MainActivity">
+
+    <!-- App title shown at the very top -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        style="@style/AppText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/app_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Subtitle right under the main title -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        style="@style/AppText.Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/app_subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp" />
+
+    <!-- Username input box -->
+    <EditText
+        android:id="@+id/etUsername"
+        style="@style/AppInput.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:autofillHints="username"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Password input box -->
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/AppInput.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        app:layout_constraintTop_toBottomOf="@id/etUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="14dp" />
+
+    <!-- Error message shown when login fails -->
+    <TextView
+        android:id="@+id/tvLoginError"
+        style="@style/AppText.Error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/error_invalid_login"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Login button -->
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/AppButton.Primary"
+        android:onClick="onLoginClick"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="320dp"
+        android:text="@string/log_in"
+        app:layout_constraintTop_toBottomOf="@id/tvLoginError"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp" />
+
+    <!-- Button to create a new account -->
+    <Button
+        android:id="@+id/btnCreateAccount"
+        style="@style/AppButton.Secondary"
+        android:onClick="onCreateAccountClick"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="320dp"
+        android:text="@string/create_account"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Small helper text that gives new users a quick tip -->
+    <TextView
+        android:id="@+id/tvHelperNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="480dp"
+        android:text="@string/tip_create_account_instruction"
+        android:textColor="@color/textSecondary"
+        android:alpha="0.9"
+        app:layout_constraintTop_toBottomOf="@id/btnCreateAccount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Forgot username link -->
+    <TextView
+        android:id="@+id/tvForgotUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/forgot_username"
+        android:onClick="onForgotUsernameClick"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/tvHelperNote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Forgot password link -->
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/forgot_password"
+        android:onClick="onForgotPasswordClick"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/tvForgotUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
